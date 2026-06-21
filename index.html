@@ -501,6 +501,12 @@
 
   function wait(ms) { return new Promise(r => setTimeout(r, ms)); }
 
+  // Longer messages get more time on screen before the next one appears,
+  // so reading pace stays consistent regardless of line length.
+  function readPause(text) {
+    return Math.max(700, Math.min(3000, text.length * 25));
+  }
+
   async function playScript() {
     if (running) return;
     running = true;
@@ -516,9 +522,9 @@
         dots.remove();
         addBubble(m.role, m.text, true);
         chatBody.scrollTop = chatBody.scrollHeight;
-        await wait(700);
+        await wait(readPause(m.text));
       }
-      await wait(2200);
+      await wait(3000);
     }
 
     await fadeOutAll();
