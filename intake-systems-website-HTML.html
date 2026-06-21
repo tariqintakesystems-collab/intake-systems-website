@@ -290,6 +290,18 @@
   .check { color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
   .built-item p { font-size: 15px; color: var(--ink); }
 
+  /* ---------- SECURITY ---------- */
+  .security { padding: 60px 0; border-top: 1px solid var(--border); }
+  .security-inner {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 36px 40px;
+  }
+  .security h2 { font-size: clamp(22px, 2.6vw, 28px); color: var(--navy); margin-bottom: 18px; }
+  .security-list { display: flex; flex-direction: column; gap: 10px; }
+  .security-list .built-item p { font-size: 14.5px; }
+
   /* ---------- FOOTER CTA ---------- */
   footer {
     background: var(--navy);
@@ -430,6 +442,20 @@
         <div class="built-item"><span class="check">✓</span><p>Works on any device, no app required</p></div>
         <div class="built-item"><span class="check">✓</span><p>Available nights, weekends, and holidays</p></div>
         <div class="built-item"><span class="check">✓</span><p>Name, phone, and case details land in your inbox in seconds</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="security">
+    <div class="wrap">
+      <div class="security-inner">
+        <div class="section-label">Built with security in mind</div>
+        <h2>What happens to a visitor's information</h2>
+        <div class="security-list">
+          <div class="built-item"><span class="check">✓</span><p>Every conversation is encrypted in transit</p></div>
+          <div class="built-item"><span class="check">✓</span><p>Your firm's credentials are never exposed in the browser</p></div>
+          <div class="built-item"><span class="check">✓</span><p>Transcripts and contact details go straight to your inbox — never stored in a public database or sold to anyone</p></div>
+        </div>
       </div>
     </div>
   </section>
