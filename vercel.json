@@ -1,8 +1,0 @@
-{
-    "rewrites": [
-          {
-                  "source": "/demo",
-                  "destination": "https://pi-intake-demo-red.vercel.app"
-          }
-    ]
-}
