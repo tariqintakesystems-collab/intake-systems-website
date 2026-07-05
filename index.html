@@ -288,7 +288,7 @@
   }
   .built h2 { font-size: clamp(26px, 3vw, 34px); color: var(--navy); margin-bottom: 40px; max-width: 560px; grid-column: 1 / -1; }
   .built-item { display: flex; gap: 12px; align-items: flex-start; padding: 6px 0; }
-  .check { color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+  .check { color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 2px; line-height: 1; }
   .built-item p { font-size: 15px; color: var(--ink); }
 
   /* ---------- SECURITY ---------- */
@@ -366,7 +366,7 @@
   <div class="wrap">
     <nav>
       <div class="brand">INTAKE<span>·</span>SYSTEMS</div>
-      <a class="nav-cta" href="mailto:tariq@intakesystems.ca" target="_blank" rel="noopener">Get in touch</a>
+      <a class="nav-cta" href="mailto:tariq@intakesystems.ca">Get in touch</a>
     </nav>
 
     <section class="hero">
@@ -375,12 +375,12 @@
         <h1>Most of your highest-intent visitors arrive when <em>no one's watching.</em></h1>
         <p class="lead">We build the conversation that replaces your contact form — matched to your firm, answering visitors at 2 a.m. just as well as it does at 2 p.m.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="#" id="demo-link" target="_blank" rel="noopener">Try it live →</a>
-          <a class="btn btn-ghost" href="mailto:tariq@intakesystems.ca" target="_blank" rel="noopener">Email us</a>
+          <a class="btn btn-primary" href="https://www.intakesystems.ca/demo" target="_blank" rel="noopener">Try it live →</a>
+          <a class="btn btn-ghost" href="mailto:tariq@intakesystems.ca">Email us</a>
         </div>
       </div>
 
-      <div class="chat-card">
+      <div class="chat-card" aria-hidden="true">
         <div class="chat-head">
           <div class="chat-dot"></div>
           <span>SAMPLE CONVERSATION</span>
@@ -448,9 +448,9 @@
         <h2>Configured once. Then it simply runs.</h2>
         <div class="built-item"><span class="check">✓</span><p>Matches your firm's colors, tone, and practice areas</p></div>
         <div class="built-item"><span class="check">✓</span><p>No technical lift required from your team</p></div>
-        <div class="built-item"><span class="check">✓</span><p>Works on any device, no app required</p></div>
+        <div class="built-item"><span class="check">✓</span><p>Works on desktop, tablet, and mobile — no app required</p></div>
         <div class="built-item"><span class="check">✓</span><p>Available nights, weekends, and holidays</p></div>
-        <div class="built-item"><span class="check">✓</span><p>Name, phone, and case details land in your inbox in seconds</p></div>
+        <div class="built-item"><span class="check">✓</span><p>Name, phone, and case details land in your inbox shortly after submission</p></div>
       </div>
     </div>
   </section>
@@ -463,7 +463,7 @@
         <div class="security-list">
           <div class="built-item"><span class="check">✓</span><p>Every conversation is encrypted in transit</p></div>
           <div class="built-item"><span class="check">✓</span><p>Your firm's credentials are never exposed in the browser</p></div>
-          <div class="built-item"><span class="check">✓</span><p>Transcripts and contact details go straight to your inbox — never stored in a public database or sold to anyone</p></div>
+          <div class="built-item"><span class="check">✓</span><p>Transcripts and contact details go straight to your inbox and are not sold to anyone</p></div>
         </div>
       </div>
     </div>
@@ -472,13 +472,13 @@
   <footer>
     <div class="wrap footer-inner">
       <h2>See it handle a <em>real scenario.</em></h2>
-      <p class="sub">Takes about a minute. No sign-up required.</p>
+      <p class="sub">A real intake conversation, start to finish.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="https://www.youtube.com/watch?v=MgHb-EzbvjA" target="_blank" rel="noopener">See it in action →</a>
       </div>
       <div class="footer-bottom">
         <span>© 2026 Intake Systems</span>
-        <a href="mailto:tariq@intakesystems.ca" target="_blank" rel="noopener">tariq@intakesystems.ca</a>
+        <a href="mailto:tariq@intakesystems.ca">tariq@intakesystems.ca</a>
       </div>
       <div class="footer-owner">
         Owned &amp; operated by Tariq Galani — <a href="mailto:tariqgalani32@gmail.com">tariqgalani32@gmail.com</a>
@@ -487,17 +487,12 @@
   </footer>
 
 <script>
-  // Replace this with your actual live demo URL before deploying
-  const DEMO_URL = "https://www.intakesystems.ca/demo";
-  document.getElementById('demo-link').href = DEMO_URL;
-
-
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const script = [
     { role: 'bot', text: "Hi — thanks for reaching out. Could you tell me a little about what happened?" },
     { role: 'user', text: "I was rear-ended at a red light a couple weeks ago. The other driver admitted it was their fault." },
-    { role: 'bot', text: "I'm glad you're okay enough to reach out. Were you injured, and are you still feeling effects now?" },
+    { role: 'bot', text: "That must have been a shock. Were you injured, and are you still feeling effects now?" },
     { role: 'user', text: "Yeah, whiplash and my shoulder's been bothering me since." },
     { role: 'bot', text: "Sorry to hear that. Are you seeing a doctor or getting any treatment for it?" },
     { role: 'user', text: "Started physiotherapy, twice a week." },
