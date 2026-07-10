@@ -139,6 +139,11 @@
     color: #fff;
   }
   .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(15,31,61,0.25); }
+  .btn-gold {
+    background: var(--gold);
+    color: var(--navy);
+  }
+  .btn-gold:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(184, 148, 62, 0.35); background: var(--gold-light); }
   .btn-ghost {
     color: var(--navy);
     border: 1px solid var(--border);
@@ -266,14 +271,34 @@
   /* ---------- HOW IT WORKS ---------- */
   .steps { padding: 70px 0; border-top: 1px solid var(--border); }
   .steps h2 { font-size: clamp(26px, 3vw, 34px); color: var(--navy); margin-bottom: 50px; max-width: 560px; }
-  .step-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+  .step-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; position: relative; }
+  .step-grid::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    height: 1px;
+    background: linear-gradient(to right, var(--gold-light), var(--border) 60%, transparent);
+  }
+  .step { position: relative; }
   .step-num {
+    position: relative;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 1px solid var(--gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'Fraunces', serif;
-    font-size: 38px;
-    font-weight: 300;
-    color: var(--gold-light);
-    margin-bottom: 14px;
-    line-height: 1;
+    font-size: 22px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--gold);
+    margin-bottom: 24px;
   }
   .step h4 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 8px; font-family: 'Public Sans', sans-serif; }
   .step p { font-size: 14.5px; color: var(--slate); }
@@ -348,6 +373,13 @@
     .built h2 { grid-column: auto; }
     .wrap { padding: 0 22px; }
     .chat-body { height: 280px; }
+    .step-grid::before {
+      top: 30px; bottom: 30px; left: 30px; right: auto;
+      width: 1px; height: auto;
+      background: linear-gradient(to bottom, var(--gold-light), var(--border) 70%, transparent);
+    }
+    .step { padding-left: 84px; }
+    .step-num { position: absolute; left: 0; top: 0; margin-bottom: 0; }
   }
 
   @media (max-width: 420px) {
@@ -473,7 +505,7 @@
       <h2>See it handle a <em>real scenario.</em></h2>
       <p class="sub">A real intake conversation, start to finish.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="https://www.youtube.com/watch?v=rZTIdv8b8Q0" target="_blank" rel="noopener">See it in action →</a>
+        <a class="btn btn-gold" href="https://www.youtube.com/watch?v=rZTIdv8b8Q0" target="_blank" rel="noopener">See it in action →</a>
       </div>
       <div class="footer-bottom">
         <span>© 2026 Intake Systems</span>
