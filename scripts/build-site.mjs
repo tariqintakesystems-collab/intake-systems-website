@@ -1,10 +1,17 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { cp, mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
 
 const root = process.cwd();
 const outDir = path.join(root, 'dist');
 const fontDir = path.join(outDir, 'assets', 'fonts');
+
+// Preserve every existing static route and asset. Only build/config files stay out of dist.
+const skip = new Set(['.git', '.vercel', 'dist', 'node_modules', 'scripts', 'package.json', 'package-lock.json', 'vercel.json']);
+for (const entry of await readdir(root, { withFileTypes: true })) {
+  if (skip.has(entry.name)) continue;
+  await cp(path.join(root, entry.name), path.join(outDir, entry.name), { recursive: true });
+}
 
 await mkdir(fontDir, { recursive: true });
 let html = await readFile(path.join(root, 'index.html'), 'utf8');
