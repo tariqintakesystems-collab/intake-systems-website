@@ -1,0 +1,11 @@
+{
+  "name": "intake-systems-website",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node scripts/build-site.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
