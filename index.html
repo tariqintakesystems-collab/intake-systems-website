@@ -1549,7 +1549,7 @@
       <p class="sub" data-reveal>Try the live intake assistant for yourself. If the conversation feels useful, tell us how your firm currently handles inquiries and we'll show you what a custom build around your intake process would look like.</p>
       <div class="cta-row" data-reveal>
         <a class="btn btn-gold" href="https://www.intakesystems.ca/demo" target="_blank" rel="noopener">Start a live conversation <span aria-hidden="true">→</span></a>
-        <a class="btn btn-light" href="https://www.youtube.com/watch?v=l25CpeBhHt4" target="_blank" rel="noopener">See it in action</a>
+        <a class="btn btn-light" href="https://www.youtube.com/watch?v=wF-LHchhTbY" target="_blank" rel="noopener">See it in action</a>
       </div>
       <div class="next-path" data-reveal aria-label="What happens next">
         <div class="next-step"><strong>01</strong><p>Test the live intake assistant.</p></div>
@@ -1573,16 +1573,12 @@
 
       const conversation = [
         { role: 'bot', text: "Hi — thanks for reaching out. Could you tell me a little about what happened?" },
-        { role: 'user', text: "I was rear-ended at a red light a couple weeks ago. The other driver admitted it was their fault." },
-        { role: 'bot', text: "That must have been a shock. Were you injured, and are you still feeling effects now?" },
-        { role: 'user', text: "Yeah, whiplash and my shoulder's been bothering me since." },
-        { role: 'bot', text: "Sorry to hear that. Are you seeing a doctor or getting any treatment for it?" },
-        { role: 'user', text: "Started physiotherapy, twice a week." },
-        { role: 'bot', text: "Good that you're getting that taken care of. Has anyone's insurance been in touch with you yet?" },
-        { role: 'user', text: "Yeah, actually — the other driver's insurance already called me. Honestly, do you think I have a good case?" },
-        { role: 'bot', text: "That's something our lawyers assess during the consultation — it's free and there's no obligation. Can I grab your name and best number so they can follow up?" },
-        { role: 'user', text: "Sarah Chen, (416) 555-0173." },
-        { role: 'bot', text: "Thanks, Sarah — someone will follow up with you shortly." }
+        { role: 'user', text: "I was rear-ended at a red light two weeks ago. The other driver admitted fault, and an old shoulder problem has been worse since." },
+        { role: 'bot', text: "I’ll note the admission for the team. Is the shoulder pain different from before, or the same issue but worse since the collision?" },
+        { role: 'user', text: "Same issue, but worse. Physio starts next week. The other insurer also asked for a recorded statement — do you think I have a good case?" },
+        { role: 'bot', text: "I’ll flag the recorded-statement request. Did you give one? And I can’t assess whether you have a good case — that’s what the free consultation is for." },
+        { role: 'user', text: "No, I didn’t. It’s almost 10 on Saturday, so let’s finish this here." },
+        { role: 'bot', text: "No problem — I’m here whatever the hour. Last two: have you reported it to your own insurer, and whereabouts in Ontario are you?" }
       ];
 
       const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
