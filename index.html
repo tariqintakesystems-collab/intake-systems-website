@@ -1583,13 +1583,13 @@
         { role: 'user', text: "I was rear-ended at a red light two weeks ago. The other driver said it was their fault, and an old shoulder injury has been acting up ever since." },
         { role: 'bot', text: "Got it. Were you getting any treatment for that shoulder before the collision, or did it only start bothering you again after?" },
         { role: 'user', text: "I wasn’t treating it before. Physio starts next week. The other driver’s insurer also asked me for a recorded statement. Do you think I have a good case?" },
-        { role: 'bot', text: "That’s something I can’t assess. The lawyer can go through it with you during the free consultation. I’ll make sure the team knows the insurer asked for a recorded statement, though. Have you given one yet?", pause: 4050 },
-        { role: 'user', text: "No, not yet. Also, since it’s almost 10 on a Saturday, can I finish this here instead of calling back during office hours?", pause: 3250 },
-        { role: 'bot', text: "Absolutely. We can finish it here, and I’ll pass everything to the team once we’re done. What part of Ontario are you in?", pause: 3650 }
+        { role: 'bot', text: "That’s something I can’t assess. The lawyer can go through it with you during the free consultation. I’ll make sure the team knows the insurer asked for a recorded statement, though. Have you given one yet?", pause: 5100 },
+        { role: 'user', text: "No, not yet. Also, since it’s almost 10 on a Saturday, can I finish this here instead of calling back during office hours?", pause: 3900 },
+        { role: 'bot', text: "Absolutely. We can finish it here, and I’ll pass everything to the team once we’re done. What part of Ontario are you in?", pause: 4100 }
       ];
 
       const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
-      const readPause = text => Math.max(950, Math.min(2750, text.length * 21));
+      const readPause = text => Math.max(1100, Math.min(4200, text.length * 27));
 
       function addBubble(role, text) {
         const bubble = document.createElement('div');
