@@ -337,7 +337,6 @@
     }
 
     .orbit-dot.one { top: 13%; right: 9%; animation: float 5s ease-in-out infinite; }
-    .orbit-dot.two { bottom: 12%; left: 5%; animation: float 6s ease-in-out infinite reverse; }
 
     .chat-shell {
       position: relative;
@@ -391,6 +390,9 @@
     .window-dots { display: flex; gap: 7px; }
     .window-dots i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.34); }
     .window-dots i:first-child { background: var(--gold); }
+    .window-dots-mirror { justify-self: end; }
+    .window-dots-mirror i:first-child { background: rgba(255,255,255,.34); }
+    .window-dots-mirror i:last-child { background: var(--gold); }
 
     .chat-title {
       font-size: 10px;
@@ -399,22 +401,6 @@
       letter-spacing: .17em;
       text-align: center;
       text-transform: uppercase;
-    }
-
-    .live-mark {
-      justify-self: end;
-      display: flex;
-      align-items: center;
-      gap: 7px;
-    }
-
-    .live-mark i {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 0 5px rgba(184,148,62,.15);
-      animation: livePulse 2s ease-in-out infinite;
     }
 
     .chat-body {
@@ -1338,14 +1324,13 @@
         <div class="hero-stage" data-reveal="right">
           <div class="stage-halo" aria-hidden="true"></div>
           <i class="orbit-dot one" aria-hidden="true"></i>
-          <i class="orbit-dot two" aria-hidden="true"></i>
 
           <div class="chat-shell" id="chatShell">
             <div class="chat-window" aria-hidden="true">
               <div class="chat-topbar">
                 <div class="window-dots"><i></i><i></i><i></i></div>
                 <span class="chat-title">SAMPLE CONVERSATION</span>
-                <span class="live-mark"><i></i></span>
+                <div class="window-dots window-dots-mirror"><i></i><i></i><i></i></div>
               </div>
               <div class="chat-body" id="chatBody">
                 <div class="bubble bot">Hi — thanks for reaching out. Could you tell me a little about what happened?</div>
