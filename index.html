@@ -120,7 +120,7 @@
       z-index: 1;
       color: var(--navy);
       font-family: "Fraunces", serif;
-      font-size: 18px;
+      font-size: 19px;
       font-weight: 650;
       letter-spacing: .045em;
       line-height: 1;
@@ -133,8 +133,8 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 46px;
-      padding: 0 23px;
+      min-height: 44px;
+      padding: 0 21px;
       overflow: hidden;
       border: 1px solid rgba(15, 31, 61, .16);
       border-radius: 999px;
@@ -157,6 +157,7 @@
     }
 
     .nav-cta span { position: relative; z-index: 1; }
+    .nav-cta-mobile { display: none; }
     .nav-cta:hover { border-color: var(--navy); color: var(--white); transform: translateY(-1px); }
     .nav-cta:hover::before { transform: translateY(0); }
 
@@ -1236,15 +1237,18 @@
 
     @media (max-width: 760px) {
       .shell { width: min(100% - 32px, 1180px); }
-      .nav { height: 74px; }
+      .nav { height: 70px; gap: 10px; }
       .brand { font-size: 15px; }
       .nav-cta {
-        min-height: 42px;
-        padding: 0 18px;
+        min-height: 40px;
+        padding: 0 14px;
         font-size: 10px;
         text-align: center;
+        white-space: nowrap;
       }
-      .hero { padding-top: 128px; }
+      .nav-cta-full { display: none; }
+      .nav-cta-mobile { display: inline; }
+      .hero { padding-top: 116px; }
       .hero h1 { font-size: clamp(43px, 13vw, 61px); }
       .hero-stage { min-height: 530px; margin: 20px -4px 0; }
       .stage-halo { width: 86vw; }
@@ -1281,8 +1285,8 @@
     }
 
     @media (max-width: 430px) {
-      .nav-cta { padding: 0 14px; }
-      .hero { padding-top: 118px; }
+      .nav-cta { padding: 0 12px; }
+      .hero { padding-top: 108px; }
       .hero h1 { font-size: 43px; }
       .lead { font-size: 16px; }
       .btn { width: 100%; }
@@ -1313,7 +1317,7 @@
   <header class="site-header" id="siteHeader">
     <div class="shell nav">
       <a class="brand" href="#top" aria-label="Intake Systems home">INTAKE<span>·</span>SYSTEMS</a>
-      <a class="nav-cta" href="mailto:tariq@intakesystems.ca"><span>Discuss your intake</span></a>
+      <a class="nav-cta" href="mailto:tariq@intakesystems.ca" aria-label="Discuss your intake with Intake Systems"><span class="nav-cta-full">Discuss your intake</span><span class="nav-cta-mobile" aria-hidden="true">Discuss intake</span></a>
     </div>
   </header>
 
